@@ -1,0 +1,17 @@
+NEXBIT - LOCAL WINDOWS START
+
+1. Install Node.js 22 LTS.
+2. Extract this ZIP to a normal folder (for example Desktop\nexbit).
+3. Double-click START-LOCAL.bat.
+4. The first launch installs npm dependencies automatically.
+5. Open http://localhost:8080/ in your browser.
+6. Keep the black command window open while using the site.
+7. Press Ctrl+C to stop the server.
+
+The local launcher temporarily disables Netlify local emulation because the
+Netlify Edge Functions/Deno layer can fail on Windows with an --allow-scripts
+compatibility error. netlify.toml is restored automatically when the local
+server stops, so the Netlify deployment configuration remains in the project.
+
+Alternative command:
+  npm run dev:local

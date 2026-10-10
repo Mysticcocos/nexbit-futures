@@ -1,0 +1,25 @@
+NEXBIT FUTURES UPDATE
+=====================
+
+Implemented:
+- Futures Market open creates a filled order + position.
+- Futures Limit open stays OPEN until price reaches the limit, then creates the position.
+- Position close by Market creates a filled reduce-only order and closes immediately.
+- Position close by Limit creates an OPEN reduce-only order and closes when the limit is reached.
+- Stale reduce-only close orders are cancelled automatically when the position no longer exists.
+
+VIP 0 futures fee model used in this demo:
+- Maker / Limit: 0.02% of executed position notional.
+- Taker / Market: 0.055% of executed position notional.
+
+Examples for 100 USDT margin:
+1x   => 100 USDT notional   => maker 0.02 / taker 0.055 USDT
+5x   => 500 USDT notional   => maker 0.10 / taker 0.275 USDT
+10x  => 1000 USDT notional  => maker 0.20 / taker 0.55 USDT
+20x  => 2000 USDT notional  => maker 0.40 / taker 1.10 USDT
+50x  => 5000 USDT notional  => maker 1.00 / taker 2.75 USDT
+100x => 10000 USDT notional => maker 2.00 / taker 5.50 USDT
+
+Start on Windows:
+Double-click START-LOCAL.bat
+Then open http://localhost:8080/
